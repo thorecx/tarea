@@ -1,0 +1,37 @@
+﻿@model Formulario_html_helpers.Models.Formulario
+@{
+    ViewBag.Title = "Datos";
+}
+
+<h2>Datos</h2>
+
+<h1>Sus Datos Personales Son:</h1>
+
+<center>
+    <div>
+        <label>Cedula: @Html.DisplayFor(Model => Model.cedula)</label> <br />
+
+        <label>Nombre: @Html.DisplayFor(Model => Model.nombre)</label> <br />
+
+        <label>Apellido: @Html.DisplayFor(Model => Model.apellido)</label> <br />
+
+        <label>Edad: @Html.DisplayFor(Model => Model.edad)</label> <br />
+
+        <label>Telefono: @Html.DisplayFor(Model => Model.telefono)</label> <br />
+
+        <label>Email: @Html.DisplayFor(Model => Model.email)</label> <br />
+
+        <label>Genero: @Html.DisplayFor(Model => Model.genero)</label> <br />
+
+        <label>Estado Civil: @Html.DisplayFor(Model => Model.estadoCivil)</label> <br />
+
+        <label>Hobbys: @for (var x = 0; x < Model.hobbys.Length; x++)
+                {
+                    if (@Model.hobbys[x] != "false")
+                    {
+                        @Model.hobbys[x]
+                        <spam>,</spam>
+                    }
+                }</label>
+    </div>
+    </center>
